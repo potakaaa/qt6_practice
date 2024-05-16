@@ -65,7 +65,7 @@ public:
     void retranslateUi(QMainWindow *Test)
     {
         Test->setWindowTitle(QCoreApplication::translate("Test", "Test", nullptr));
-        pushButton->setText(QCoreApplication::translate("Test", "Hello World", nullptr));
+        pushButton->setText(QCoreApplication::translate("Test", "Music Player", nullptr));
     } // retranslateUi
 
 };

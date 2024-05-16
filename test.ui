@@ -30,7 +30,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Hello World</string>
+       <string>Music Player</string>
       </property>
      </widget>
     </item>
