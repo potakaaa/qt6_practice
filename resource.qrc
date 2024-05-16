@@ -1,1 +1,8 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/images">
+        <file>resources/189533.png</file>
+        <file>resources/baby.jpg</file>
+        <file>resources/IMG_9424.jpg</file>
+        <file>resources/Screenshot 2023-01-10 103529.png</file>
+    </qresource>
+</RCC>

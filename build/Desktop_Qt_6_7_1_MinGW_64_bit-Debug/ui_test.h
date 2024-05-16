@@ -11,11 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,8 +24,10 @@ class Ui_Test
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout;
-    QPushButton *pushButton;
+    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *verticalLayout;
+    QLabel *label;
+    QLabel *image;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -36,17 +38,31 @@ public:
         Test->resize(800, 600);
         centralwidget = new QWidget(Test);
         centralwidget->setObjectName("centralwidget");
-        gridLayout = new QGridLayout(centralwidget);
-        gridLayout->setObjectName("gridLayout");
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setMinimumSize(QSize(0, 100));
+        verticalLayout_2 = new QVBoxLayout(centralwidget);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
         QFont font;
-        font.setFamilies({QString::fromUtf8("Sitka Banner")});
-        font.setPointSize(20);
-        pushButton->setFont(font);
+        font.setFamilies({QString::fromUtf8("Poppins")});
+        font.setPointSize(16);
+        font.setBold(true);
+        label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
+        verticalLayout->addWidget(label);
+
+        image = new QLabel(centralwidget);
+        image->setObjectName("image");
+        image->setStyleSheet(QString::fromUtf8(""));
+        image->setScaledContents(false);
+        image->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(image);
+
+
+        verticalLayout_2->addLayout(verticalLayout);
 
         Test->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Test);
@@ -65,7 +81,8 @@ public:
     void retranslateUi(QMainWindow *Test)
     {
         Test->setWindowTitle(QCoreApplication::translate("Test", "Test", nullptr));
-        pushButton->setText(QCoreApplication::translate("Test", "Music Player", nullptr));
+        label->setText(QCoreApplication::translate("Test", "Hello, I am Jesreal", nullptr));
+        image->setText(QCoreApplication::translate("Test", "TextLabel", nullptr));
     } // retranslateUi
 
 };
